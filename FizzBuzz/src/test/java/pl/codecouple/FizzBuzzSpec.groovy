@@ -25,13 +25,24 @@ class FizzBuzzSpec extends Specification {
             result == "Buzz"
     }
 
+    def "Should return 'FizzBuzz' when number is divided by five" (){
+        when:
+            def result = fizzBuzz.check(15)
+        then:
+            result == "FizzBuzz"
+    }
+
     class FizzBuzz{
 
         String check(int number) {
+            def result = ""
             if(number%3==0){
-                return "Fizz"
+                result+="Fizz"
             }
-            return "Buzz"
+            if(number%5==0){
+                result+="Buzz"
+            }
+            return result
         }
     }
 
