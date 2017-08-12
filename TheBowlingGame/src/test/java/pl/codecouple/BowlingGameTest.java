@@ -64,6 +64,17 @@ public class BowlingGameTest {
         assertThat(score).isEqualTo(24);
     }
 
+    //Should return 300 as a score when you knock down all strikes
+
+    @Test
+    public void shouldReturnThreeHundredsWhenAllStrikesAreKnockDown() throws Exception {
+        // When
+        IntStream.range(0,20).forEach(roll->game.roll(10));
+        int score = game.getScore();
+        // Then
+        assertThat(score).isEqualTo(300);
+    }
+
     private class BowlingGame {
 
         int[] rolls = new int[21];
@@ -73,12 +84,12 @@ public class BowlingGameTest {
             int score = 0;
             int index = 0;
             for(int frame = 0; frame<10; frame++){
-                if(rolls[index] == 10) {
-                    score = 10 + rolls[index+1] + rolls[index+2];
+                if(rolls[index] == 10) { //strike
+                    score += 10 + rolls[index+1] + rolls[index+2];
                     index++;
                 }
                 else if(rolls[index] + rolls[index+1] == 10){ //spare
-                    score = 10 + rolls[index+2];
+                    score += 10 + rolls[index+2];
                     index+=2;
                 } else{
                     score+=rolls[index] + rolls[index+1];
