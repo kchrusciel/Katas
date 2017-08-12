@@ -36,13 +36,21 @@ class FizzBuzzSpec extends Specification {
 
         String check(int number) {
             def result = ""
-            if(number%3==0){
-                result+="Fizz"
+            if(isDividedByThree(number)){
+                result+= "Fizz"
             }
-            if(number%5==0){
+            if(isDividedByFive(number)){
                 result+="Buzz"
             }
             return result
+        }
+
+        private boolean isDividedByFive(int number) {
+            number % 5 == 0
+        }
+
+        private boolean isDividedByThree(int number) {
+            number % 3 == 0
         }
     }
 
