@@ -11,12 +11,12 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class BowlingGameTest {
 
+    BowlingGame game = new BowlingGame();
+
     //Should return zero as a score when all rolls are missed
 
     @Test
     public void shouldReturnZeroWhenAllRollsAreMissed() throws Exception {
-        // Given
-        BowlingGame game = new BowlingGame();
         // When
         IntStream.range(0,20).forEach(roll->game.roll(0));
         int score = game.getScore();
@@ -26,11 +26,8 @@ public class BowlingGameTest {
 
     //Should return 20 as a score when you knock down one pin per roll
 
-
     @Test
     public void shouldReturnTwentyWhenKnockDownOnePinPerRoll() throws Exception {
-        // Given
-        BowlingGame game = new BowlingGame();
         // When
         IntStream.range(0,20).forEach(roll->game.roll(1));
         int score = game.getScore();
@@ -39,16 +36,41 @@ public class BowlingGameTest {
 
     }
 
+    //Should return 16 as a score when you knock down spare in first frame followed by three
+
+    @Test
+    public void shouldReturnSixTeenWhenSpareIsKnockDown() throws Exception {
+        // When
+        game.roll(5);
+        game.roll(5);
+        game.roll(3);
+        IntStream.range(0,17).forEach(roll->game.roll(0));
+        int score = game.getScore();
+        // Then
+        assertThat(score).isEqualTo(16);
+    }
+
     private class BowlingGame {
 
-        private int score = 0;
+        int[] rolls = new int[21];
+        int roll = 0;
 
         int getScore() {
+            int score = 0;
+            int index = 0;
+            for(int frame = 0; frame<10; frame++){
+                if(rolls[index] + rolls[index+1] == 10){ //spare
+                    score = 10 + rolls[index+2];
+                } else{
+                    score+=rolls[index] + rolls[index+1];
+                }
+                index+=2;
+            }
             return score;
         }
 
-        void roll(int roll) {
-            score+=roll;
+        void roll(int pins) {
+            rolls[roll++] = pins;
         }
     }
 }
