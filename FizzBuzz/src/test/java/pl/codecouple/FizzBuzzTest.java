@@ -11,10 +11,10 @@ public class FizzBuzzTest {
 
     private FizzBuzz fizzBuzz = new FizzBuzz();
 
-    //Should return 'Fizz' when number is divided by three
+    //Should return 'Fizz' when number is divisible by three
 
     @Test
-    public void shouldReturnFizzWhenNumberIsDividedByThree() throws Exception {
+    public void shouldReturnFizzWhenNumberIsDivisibleByThree() throws Exception {
         // When
         String result = fizzBuzz.check(3);
         // Then
@@ -22,10 +22,10 @@ public class FizzBuzzTest {
     }
 
 
-    //Should return 'Buzz' when number is divided by five
+    //Should return 'Buzz' when number is divisible by five
 
     @Test
-    public void shouldReturnBuzzWhenNumberIsDividedByFive() throws Exception {
+    public void shouldReturnBuzzWhenNumberIsDivisibleByFive() throws Exception {
         // When
         String result = fizzBuzz.check(5);
         // Then
@@ -36,7 +36,7 @@ public class FizzBuzzTest {
     //Should return 'FizzBuzz' when number is divisible by five
 
     @Test
-    public void shouldReturnFizzBuzzWhenNumberIsDividedByFiveAndThree() throws Exception {
+    public void shouldReturnFizzBuzzWhenNumberIsDivisibleByFiveAndThree() throws Exception {
         // When
         String result = fizzBuzz.check(15);
         // Then

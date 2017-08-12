@@ -12,21 +12,21 @@ class FizzBuzzSpec extends Specification {
     @Shared
     def fizzBuzz = new FizzBuzz()
 
-    def "Should return 'Fizz' when number is divided by three" (){
+    def "Should return 'Fizz' when number is divisible by three" (){
         when:
             def result = fizzBuzz.check(3)
         then:
             result == "Fizz"
     }
 
-    def "Should return 'Buzz' when number is divided by five" (){
+    def "Should return 'Buzz' when number is divisible by five" (){
         when:
             def result = fizzBuzz.check(5)
         then:
             result == "Buzz"
     }
 
-    def "Should return 'FizzBuzz' when number is divided by five and three" (){
+    def "Should return 'FizzBuzz' when number is divisible by five and three" (){
         when:
             def result = fizzBuzz.check(15)
         then:
@@ -34,7 +34,7 @@ class FizzBuzzSpec extends Specification {
     }
 
     @Unroll
-    def "Should return #excpectedValue when number is divided by #number" (){
+    def "Should return #excpectedValue when number is divisible by #number" (){
         when:
             def result = fizzBuzz.check(number)
         then:
