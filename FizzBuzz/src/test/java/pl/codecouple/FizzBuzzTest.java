@@ -9,23 +9,37 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class FizzBuzzTest {
 
-    //Should return 'Fizz' when number is divided by three
+    private FizzBuzz fizzBuzz = new FizzBuzz();
 
+    //Should return 'Fizz' when number is divided by three
 
     @Test
     public void shouldReturnFizzWhenNumberIsDividedByThree() throws Exception {
-        // Given
-        FizzBuzz fizzBuzz = new FizzBuzz();
         // When
         String result = fizzBuzz.check(3);
         // Then
         assertThat(result).contains("Fizz");
     }
 
+
+    //Should return 'Buzz' when number is divided by five
+
+    @Test
+    public void shouldReturnBuzzWhenNumberIsDividedByFive() throws Exception {
+        // When
+        String result = fizzBuzz.check(5);
+        // Then
+        assertThat(result).contains("Buzz");
+    }
+
     private class FizzBuzz {
 
         String check(int number) {
-            return "Fizz";
+            if(number%3==0){
+                return "Fizz";
+            }
+            return "Buzz";
         }
     }
+
 }
