@@ -2,6 +2,7 @@ package pl.codecouple
 
 import spock.lang.Shared
 import spock.lang.Specification
+import spock.lang.Unroll
 
 /**
  * Created by Krzysztof Chruściel.
@@ -25,11 +26,25 @@ class FizzBuzzSpec extends Specification {
             result == "Buzz"
     }
 
-    def "Should return 'FizzBuzz' when number is divided by five" (){
+    def "Should return 'FizzBuzz' when number is divided by five and three" (){
         when:
             def result = fizzBuzz.check(15)
         then:
             result == "FizzBuzz"
+    }
+
+    @Unroll
+    def "Should return #excpectedValue when number is divided by #number" (){
+        when:
+            def result = fizzBuzz.check(number)
+        then:
+            result == excpectedValue
+        where:
+            number || excpectedValue
+            1      || ""
+            3      || "Fizz"
+            5      || "Buzz"
+            15     || "FizzBuzz"
     }
 
     class FizzBuzz{
