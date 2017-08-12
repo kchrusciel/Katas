@@ -46,15 +46,26 @@ public class FizzBuzzTest {
 
     private class FizzBuzz {
 
+        static final String FIZZ = "Fizz";
+        static final String BUZZ = "Buzz";
+
         String check(int number) {
             String result = "";
-            if(number%3==0){
-                result+="Fizz";
+            if(isDividedByThree(number)){
+                result+= FIZZ;
             }
-            if(number%5==0){
-                result+="Buzz";
+            if(isDividedByFive(number)){
+                result+= BUZZ;
             }
             return result;
+        }
+
+        private boolean isDividedByFive(int number) {
+            return number%5==0;
+        }
+
+        private boolean isDividedByThree(int number) {
+            return number%3==0;
         }
     }
 
