@@ -33,7 +33,7 @@ public class FizzBuzzTest {
     }
 
 
-    //Should return 'FizzBuzz' when number is divided by five
+    //Should return 'FizzBuzz' when number is divisible by five
 
     @Test
     public void shouldReturnFizzBuzzWhenNumberIsDividedByFiveAndThree() throws Exception {
@@ -41,6 +41,16 @@ public class FizzBuzzTest {
         String result = fizzBuzz.check(15);
         // Then
         assertThat(result).contains("FizzBuzz");
+    }
+
+    //Should return number when number is not divisible by five and three
+
+    @Test
+    public void shouldReturnNumberWhenNumberIsNotDivisibleByFiveAndThree() throws Exception {
+        // When
+        String result = fizzBuzz.check(1);
+        // Then
+        assertThat(result).contains("1");
     }
 
 
@@ -57,7 +67,7 @@ public class FizzBuzzTest {
             if(isDividedByFive(number)){
                 result+= BUZZ;
             }
-            return result;
+            return result.isEmpty() ? String.valueOf(number) : result;
         }
 
         private boolean isDividedByFive(int number) {

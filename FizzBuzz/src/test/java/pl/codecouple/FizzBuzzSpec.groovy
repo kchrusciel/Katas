@@ -41,7 +41,7 @@ class FizzBuzzSpec extends Specification {
             result == excpectedValue
         where:
             number || excpectedValue
-            1      || ""
+            1      || "1"
             3      || "Fizz"
             5      || "Buzz"
             15     || "FizzBuzz"
@@ -57,7 +57,7 @@ class FizzBuzzSpec extends Specification {
             if(isDividedByFive(number)){
                 result+="Buzz"
             }
-            return result
+            return result.isEmpty() ? String.valueOf(number) : result
         }
 
         private boolean isDividedByFive(int number) {
