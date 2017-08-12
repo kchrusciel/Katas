@@ -32,13 +32,29 @@ public class FizzBuzzTest {
         assertThat(result).contains("Buzz");
     }
 
+
+    //Should return 'FizzBuzz' when number is divided by five
+
+    @Test
+    public void shouldReturnFizzBuzzWhenNumberIsDividedByFiveAndThree() throws Exception {
+        // When
+        String result = fizzBuzz.check(15);
+        // Then
+        assertThat(result).contains("FizzBuzz");
+    }
+
+
     private class FizzBuzz {
 
         String check(int number) {
+            String result = "";
             if(number%3==0){
-                return "Fizz";
+                result+="Fizz";
             }
-            return "Buzz";
+            if(number%5==0){
+                result+="Buzz";
+            }
+            return result;
         }
     }
 
