@@ -2,13 +2,13 @@
 
 * Create new project (Maven will be ok)
 * Right now you can use only keyboard
-* Create new class "Dojo" with psvm (? + N)
+* Create new class "Dojo" with psvm (⌘ + N)
 * add sout with "message" message (sout)
-* duplicate five times line created before (? + D)
+* duplicate five times line created before (⌘ + D)
 * change last "message" to "last"
 * move last line to the top (shift + ⌘ + UP)
 * extract "message" to const (option + ⌘ + C)
-* move cursor on the begging and end (? + left or right)
+* move cursor on the begging and end (⌘ + left or right)
 * move cursor between whitespaces (option + left or right)
 * extract one of "meesage" line to other method (option + ⌘ + M)
 * create test for this class (shift + ⌘ + T)
@@ -36,10 +36,10 @@ private String dojoMethod(int value) {
 
 * run tests for a first time (shift + control + R)
 * run tests for a second time (control + R)
-* add breakpoint (? + F8) on first and second assertion and line with "Other"
-* go to assertEquals definition (? + B)
-* on assertEquals definition show usages (? + B)
-* close assert class editor (? + W)
+* add breakpoint (⌘ + F8) on first and second assertion and line with "Other"
+* go to assertEquals definition (⌘ + B)
+* on assertEquals definition show usages (⌘ + B)
+* close assert class editor (⌘ + W)
 * run tests on debug (control + D)
 * go inside (F7)
 * step over (F8)
@@ -47,7 +47,7 @@ private String dojoMethod(int value) {
 * evaluate "dojoMethod(2)" (option + F8)
 * switch to other breakpoint (F9)
 * increase font size (shift + ⌘ + W)
-* find "message" in Dojo class file (? + F)
+* find "message" in Dojo class file (⌘ + F)
 * find "Second" in path (shift ⌘ F)
 * show Dojo class hierachy (control + H)
 * copy and paste code below to Dojo class:
@@ -60,19 +60,19 @@ private String dojoSurround(int value) {
 ----
 
 * surround return statement with if/else (option + ⌘ + T)
-* go to line number 20 in DojoTest class (? + L)
+* go to line number 20 in DojoTest class (⌘ + L)
 * make the shrink selection for a few times (option + up)
 * back to previous file cursor position (option + ⌘ + left or right)
 
-* go to settings (? + ,)
+* go to settings (⌘ + ,)
 * change theme
-* go to project settings (? + ;) and change project name
+* go to project settings (⌘ + ;) and change project name
 * enter presentation mode (shift + ⌘ + A)
 * exit presentation mode (shift + ⌘ + A)
-* open project view (? + 1)
-* open structure view (? + 7)
+* open project view (⌘ + 1)
+* open structure view (⌘ + 7)
 * make full screen on active editor (shift + f12)
-* switch recent files (? + E)
-* switch card tabs (? + shift +[)
-* go to settings (? + ,)
+* switch recent files (⌘ + E)
+* switch card tabs (⌘ + shift +[)
+* go to settings (⌘ + ,)
 * change theme once again
