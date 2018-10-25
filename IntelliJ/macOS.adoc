@@ -46,7 +46,7 @@ private String dojoMethod(int value) {
 * switch to other breakpoint (F9)
 * evaluate "dojoMethod(2)" (option + F8)
 * switch to other breakpoint (F9)
-* increase font size (shift + ⌘ + W)
+* increase font size (shift + ⌘ + A)
 * find "message" in Dojo class file (⌘ + F)
 * find "Second" in path (shift ⌘ F)
 * show Dojo class hierachy (control + H)

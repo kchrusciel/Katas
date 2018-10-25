@@ -1,0 +1,78 @@
+== Windows Keymap Dojo
+
+* Create new project (Maven will be ok)
+* Right now you can use only keyboard
+* Create new class "Dojo" with psvm (alt + insert)
+* add sout with "message" message (sout)
+* duplicate five times line created before (ctrl + D)
+* change last "message" to "last"
+* move last line to the top (ctrl + shift + up)
+* extract "message" to const (ctrl + alt + C)
+* move cursor on the begging and end (home/end)
+* move cursor between whitespaces (ctrl + left or right)
+* extract one of "meesage" line to other method (ctrl + alt + M)
+* create test for this class (ctrl + shift + T)
+* show all tests for this class (ctrl + shift + T)
+* copy and paste code below to DojoTest class:
+
+[source, java]
+----
+@Test
+public void dojoTest() {
+    assertEquals("First", dojoMethod(1));
+    assertEquals("Second", dojoMethod(2));
+    assertEquals("Other", dojoMethod(3));
+}
+
+private String dojoMethod(int value) {
+    if (value == 1) {
+        return "First";
+    } else if (value == 2) {
+        return "Second";
+    }
+    return "Other";
+}
+----
+
+* run tests for a first time (ctrl + shift + F10)
+* run tests for a second time (shift + F10)
+* add breakpoint on first and second assertion and line with "Other" (ctrl + F8)
+* go to assertEquals definition (ctrl + B)
+* on assertEquals definition show usages (ctrl + B)
+* close assert class editor (ctrl + F4)
+* run tests on debug (ctrl + F9)
+* go inside (F7)
+* step over (F8)
+* switch to other breakpoint (F9)
+* evaluate "dojoMethod(2)" (alt + F8)
+* switch to other breakpoint (F9)
+* increase font size (ctrl + shift + A)
+* find "message" in Dojo class file (ctrl + F)
+* find "Second" in path (ctrl + shift + F)
+* show Dojo class hierachy (ctrl + H)
+* copy and paste code below to Dojo class:
+
+[source, java]
+----
+private String dojoSurround(int value) {
+    return "Message";
+}
+----
+
+* surround return statement with if/else (ctrl + alt + T)
+* go to line number 20 in DojoTest class (ctrl + G)
+* make the shrink selection for a few times (ctrl + W)
+* back to previous file cursor position (ctrl + alt + left)
+
+* go to settings (ctrl + alt + S)
+* change theme
+* go to project settings and change project name (F4 on project)
+* enter presentation mode (ctrl + shift + A)
+* exit presentation mode (ctrl + shift + A)
+* open project view (alt + 1)
+* open structure view (alt + 7)
+* make full screen on active editor (shift + F12)
+* switch recent files (ctrl + E)
+* switch card tabs (alt + left or right)
+* go to settings (ctrl + alt + S)
+* change theme once again
